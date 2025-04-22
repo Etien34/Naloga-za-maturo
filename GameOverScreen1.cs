@@ -1,0 +1,26 @@
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class GameOverScreen1 : MonoBehaviour
+{
+    public Text gameOverText; 
+
+    public void Setup()
+    {
+        gameObject.SetActive(true);
+
+        
+        if (gameOverText != null)
+        {
+            gameOverText.text = "Igra je konèana!"; 
+        }
+
+        Debug.Log("Game Over screen je prikazan"); 
+    }
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(0);
+        Music.DontDestroyOnLoad(this);
+    }
+}
